@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;700&family=Orbitron:wght@400..900&family=Rajdhani:wght@300..700&family=Pixelify+Sans:wght@400..700&display=swap');
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;700&family=Orbitron:wght@400..900&family=Rajdhani:wght@300..700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* Our Neon Color Palette */
+  --color-deep-purple: #0a0a2a;
+  --color-grid-blue: #00d2ff;
+  --color-neon-pink: #ff007f;
+  --color-cyber-cyan: #00ffff;
+  --color-synth-yellow: #ffea00;
+
+  /*Macintosh 1984 Palette*/
+  --color-mac-black: #000000;
+  --color-mac-screen: #F0F5EB;
+
+
+
+  /* Our Font Families */
+  --font-sans: "Inter", sans-serif;
+  --font-retro: "Bungee", cursive;
+  --font-retro-pixel: "Pixelify Sans", monospace;
+
+  /* New fonts for the homepage */
+  --font-orbitron: "Orbitron", sans-serif;
+  --font-rajdhani: "Rajdhani", sans-serif;
+}
+
+/* ... keep your existing body styles and utility classes below ... */
+body {
+  background-color: var(--color-deep-purple);
+  color: white;
+  font-family: var(--font-sans);
+  /* Default font */
+}
+
+@utility glow-pink {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px var(--color-neon-pink), 0 0 40px var(--color-neon-pink);
+}
+
+@utility glow-cyan {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px var(--color-cyber-cyan), 0 0 40px var(--color-cyber-cyan);
+}
+
+@utility box-glow-cyan {
+  box-shadow: 0 0 10px var(--color-cyber-cyan), inset 0 0 10px var(--color-cyber-cyan);
+}
+
+@utility box-glow-pink {
+  box-shadow: 0 0 10px var(--color-neon-pink), inset 0 0 10px var(--color-neon-pink);
+}
+
+
+@keyframes cyber-glitch {
+  0% {
+    transform: translate(0) scale(1);
+    filter: drop-shadow(0 0 0 transparent);
+    opacity: 1;
+  }
+
+  20% {
+    transform: translate(-10px, 5px) skewX(-15deg);
+    filter: drop-shadow(-15px 0 0 #ff007f) drop-shadow(15px 0 0 #00ffff);
+    opacity: 0.8;
+  }
+
+  40% {
+    transform: translate(10px, -5px) skewX(15deg) scale(1.05);
+    filter: drop-shadow(15px 0 0 #ff007f) drop-shadow(-15px 0 0 #00ffff) invert(0.2);
+    opacity: 0.9;
+  }
+
+  60% {
+    transform: translate(-5px, 10px) skewX(-5deg);
+    filter: drop-shadow(-10px 0 0 #ffea00);
+    opacity: 0.4;
+  }
+
+  80% {
+    transform: translate(5px, -10px) skewX(5deg) scale(1.1);
+    filter: drop-shadow(10px 0 0 #00ffff) hue-rotate(90deg);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translate(0) skewX(0deg) scale(1.2);
+    filter: blur(5px);
+    opacity: 0;
+  }
+
+  /* Fades into the new page */
+}
+
+.animate-glitch-out {
+  animation: cyber-glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+
+/* --- BUTTON LIGHT SWEEP ANIMATION (MOBILE) --- */
+@keyframes sweep {
+  0% { left: -100%; }
+  30% { left: 200%; }
+  100% { left: 200%; }
+}
+
+
+@keyframes cyber-glitch-in {
+  0% {
+    transform: scale(1.2) skewX(15deg);
+    filter: blur(10px) drop-shadow(15px 0 0 #00ffff);
+    opacity: 0;
+  }
+
+  30% {
+    transform: translate(10px, -10px) skewX(-10deg);
+    filter: drop-shadow(-15px 0 0 #ff007f) invert(0.2);
+    opacity: 0.5;
+  }
+
+  60% {
+    transform: translate(-5px, 5px) skewX(5deg);
+    filter: drop-shadow(10px 0 0 #ffea00);
+    opacity: 0.8;
+  }
+
+  80% {
+    transform: translate(2px, -2px) skewX(-2deg);
+    filter: none;
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: translate(0) scale(1) skewX(0);
+    filter: drop-shadow(0 0 0 transparent);
+    opacity: 1;
+  }
+}
+
+.animate-glitch-in {
+  animation: cyber-glitch-in 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* --- CYBER SCROLLBAR --- */
+.cyber-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.cyber-scrollbar::-webkit-scrollbar-track {
+  background: rgba(10, 10, 42, 0.5);
+  /* Deep purple transparent track */
+  border-radius: 10px;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.cyber-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-cyber-cyan);
+  border-radius: 8px;
+}
+
+.cyber-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neon-pink);
+}
+
+/* For Firefox (Standardized but less customizable) */
+.cyber-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-cyber-cyan) rgba(10, 10, 42, 0.5);
+}
