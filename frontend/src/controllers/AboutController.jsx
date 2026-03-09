@@ -34,7 +34,7 @@ const AboutController = () => {
         <div className={`flex flex-col items-center justify-center min-h-[70vh] p-4 z-10 w-full relative ${isGlitching ? 'animate-glitch-out' : 'animate-glitch-in'}`}>
 
             {/* Title - Scales down cleanly for mobile */}
-            <h2 className={`text-5xl md:text-7xl font-orbitron text-white glow-pink tracking-widest uppercase transition-opacity duration-700 mb-8 z-20
+            <h2 className={`text-4xl sm:text-5xl md:text-7xl flex font-orbitron text-white whitespace-nowrap glow-pink tracking-widest uppercase transition-opacity duration-700 mb-8 z-20
         ${isExpanded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
                 PLAYER <span className='text-synth-yellow glow-pink'>1</span>
             </h2>

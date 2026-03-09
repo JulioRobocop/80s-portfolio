@@ -15,8 +15,8 @@ export const projectData = [
         description: "An immersive, interactive 80s retro-futuristic portfolio built to showcase frontend engineering skills. Features complex React state management for custom animations, integrated audio controls, and a fully responsive, pixel-perfect layout.",
         techStack: ["REACT", "VITE", "TAILWIND CSS", "UI/UX DESIGN"],
         color: "pink",
-        demoLink: "https://your-portfolio-link.com", // You'll update this when we deploy!
-        githubLink: "https://github.com/yourusername/devlogic-portfolio",
+        demoLink: "https://juliodev-portfolio80s.netlify.app/",
+        githubLink: "https://github.com/JulioRobocop/80s-portfolio.git",
         image: "../../80swebsite.png"
     }
 ]

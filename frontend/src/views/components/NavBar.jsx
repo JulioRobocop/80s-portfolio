@@ -70,9 +70,9 @@ const Navbar = () => {
                         <div className={`absolute top-12 left-1/2 -translate-x-1/2 mt-4 bg-deep-purple/95 border border-cyber-cyan box-glow-cyan p-5 rounded-lg flex flex-col items-center gap-4 backdrop-blur-xl z-50 w-[90vw] max-w-60 ${isClosing ? 'animate-glitch-out' : 'animate-glitch-in'}`}>
                             <div className="w-full flex justify-between items-center border-b border-cyber-cyan/30 pb-2">
                                 <span className="font-orbitron text-[10px] text-neon-pink tracking-widest">TAPE_01</span>
-                                <span className={`font-rajdhani text-xs tracking-widest ${isPlaying ? 'text-synth-yellow animate-pulse' : 'text-gray-400'}`}>
-                                    {isPlaying ? 'PLAYING...' : 'PAUSED'}
-                                </span>
+                                <div className="text-synth-yellow font-orbitron text-[10px] md:text-xs tracking-widest text-right w-20">
+                                    {isPlaying ? 'PLAYING' : 'PAUSED'}
+                                </div>
                             </div>
                             <audio ref={audioRef} src={synthTrack} loop volume={volume} />
                             <div className="flex items-center gap-6 mt-1">

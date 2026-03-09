@@ -168,3 +168,8 @@ body {
   scrollbar-width: thin;
   scrollbar-color: var(--color-cyber-cyan) rgba(10, 10, 42, 0.5);
 }
+
+
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
